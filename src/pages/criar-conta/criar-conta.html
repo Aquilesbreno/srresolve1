@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastre-se</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label stacked>Nome Completo</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+      <div [hidden]="!form.controls.nome.errors.required">
+        O Campo é Obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" formControlName="nascimento"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nascimento.valid && (form.controls.nascimento.dirty || form.controls.nascimento.touched)" color="danger">
+      <div [hidden]="!form.controls.nascimento.errors.required">
+        O Campo é Obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+      <div [hidden]="!form.controls.email.errors.required">
+        O Campo é Obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty || form.controls.password.touched)" color="danger">
+      <div [hidden]="!form.controls.password.errors.required">
+        O Campo é Obrigatório
+      </div>
+    </ion-item>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">
+        Criar Conta
+      </button>
+    </div>
+  </form>
+
+</ion-content>
+

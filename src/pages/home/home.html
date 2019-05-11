@@ -1,0 +1,24 @@
+
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>HOME</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <h3>Bem vindo, </h3>
+    <h4>{{userName}}</h4>
+     <button ion-button block color="dark" clear navPush="ServicosListaPage">Serviços</button>
+     <!--<button ion-button block color="dark" clear navPush="ServicosEditaPage">Cadastrar Serviços</button>
+     <button ion-button block color="dark" clear navPush="CategoriasEditaPage">Cadastrar Categorias</button>-->
+     <button ion-button block color="dark" clear navPush="CategoriasListaPage"> Categorias</button>
+     <button ion-button block color="dark" clear navPush="RecebeOrcamentoPage"> Orcamentos Recebidos</button>
+     <button ion-button block color="dark" clear navPush="SobrePage">Sobre</button>
+     <button ion-button block color="dark" (click)="sair()">Sair</button>
+  </ion-content>
+
+
